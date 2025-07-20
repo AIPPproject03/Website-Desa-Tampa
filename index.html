@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desa Tampa - Kec. Paku, Kab. Barito Timur</title>
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                <h1>Desa Tampa</h1>
+            </div>
+            <nav class="nav-menu">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#potensi">Potensi</a></li>
+                    <li><a href="#wisata">Wisata</a></li>
+                    <li><a href="#peta">Peta</a></li>
+                    <li><a href="#galeri">Galeri</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Background Video -->
+    <section class="hero" id="beranda">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="assets/video/tampa-village.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="animate-fade-in">Selamat Datang di <span>Desa Tampa</span></h1>
+                <p class="animate-slide-up">Kecamatan Paku, Kabupaten Barito Timur</p>
+                <div class="hero-features animate-fade-in-delay">
+                    <div class="hero-feature">
+                        <i class="fas fa-tree"></i>
+                        <span>Kekayaan Alam</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-users"></i>
+                        <span>Budaya Lokal</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-mountain"></i>
+                        <span>Wisata Menarik</span>
+                    </div>
+                </div>
+                <a href="#profil" class="btn-primary animate-bounce">Jelajahi Desa Tampa</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#profil">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Profil Desa Section -->
+    <section class="section" id="profil">
+        <div class="container">
+            <h2 class="section-title">Profil Desa</h2>
+            <div class="profil-content">
+                <div class="profil-img">
+                    <img src="assets/img/desa-tampa.jpg" alt="Desa Tampa">
+                </div>
+                <div class="profil-text">
+                    <p>Desa Tampa merupakan salah satu desa yang terletak di Kecamatan Paku, Kabupaten Barito Timur,
+                        Kalimantan Tengah. Desa ini memiliki keunikan budaya dan kekayaan alam yang melimpah.</p>
+                    <p>Dengan jumlah penduduk sekitar X jiwa, Desa Tampa memiliki beragam potensi yang dapat
+                        dikembangkan untuk kesejahteraan masyarakat.</p>
+
+                    <h3>Visi & Misi</h3>
+                    <h4>Visi</h4>
+                    <p>"Mewujudkan Desa Tampa yang mandiri, sejahtera, dan berbudaya"</p>
+
+                    <h4>Misi</h4>
+                    <ul>
+                        <li>Meningkatkan kualitas sumber daya manusia</li>
+                        <li>Mengembangkan potensi ekonomi lokal</li>
+                        <li>Melestarikan budaya dan adat istiadat</li>
+                        <li>Membangun infrastruktur desa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Potensi Desa Section -->
+    <section class="section bg-light" id="potensi">
+        <div class="container">
+            <h2 class="section-title">Potensi Desa</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Pertanian</h3>
+                    <p>Lahan pertanian yang subur dengan komoditas utama padi, sayuran, dan buah-buahan lokal.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Perkebunan</h3>
+                    <p>Perkebunan karet, kelapa sawit, dan tanaman industri lainnya yang menjadi sumber penghasilan
+                        utama.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Kerajinan</h3>
+                    <p>Kerajinan tangan tradisional berbahan dasar rotan, bambu, dan kayu yang bernilai seni tinggi.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Perikanan</h3>
+                    <p>Budidaya ikan air tawar dan penangkapan ikan di sungai yang menjadi sumber protein masyarakat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wisata Section -->
+    <section class="section" id="wisata">
+        <div class="container">
+            <h2 class="section-title">Wisata Desa</h2>
+            <div class="wisata-slider">
+                <div class="wisata-slide">
+                    <img src="assets/img/wisata-1.jpg" alt="Wisata Alam">
+                    <div class="wisata-info">
+                        <h3>Air Terjun Tampa</h3>
+                        <p>Air terjun dengan keindahan alam yang masih alami dan menyegarkan</p>
+                        <a href="#" class="btn-secondary">Lihat Detail</a>
+                    </div>
+                </div>
+                <div class="wisata-slide">
+                    <img src="assets/img/wisata-2.jpg" alt="Wisata Budaya">
+                    <div class="wisata-info">
+                        <h3>Rumah Adat Dayak</h3>
+                        <p>Rumah adat tradisional yang menjadi warisan budaya leluhur</p>
+                        <a href="#" class="btn-secondary">Lihat Detail</a>
+                    </div>
+                </div>
+                <div class="wisata-slide">
+                    <img src="assets/img/wisata-3.jpg" alt="Wisata Kuliner">
+                    <div class="wisata-info">
+                        <h3>Kuliner Tradisional</h3>
+                        <p>Berbagai makanan khas yang menggugah selera dari Desa Tampa</p>
+                        <a href="#" class="btn-secondary">Lihat Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peta Interaktif Section -->
+    <section class="section bg-light" id="peta">
+        <div class="container">
+            <h2 class="section-title">Peta Interaktif Desa Tampa</h2>
+            <div class="map-container">
+                <div class="map-wrapper">
+                    <div id="mapInteraktif" class="map"></div>
+                    <a href="https://maps.app.goo.gl/CV3SVpLL2NKXHj7x8" target="_blank" class="btn-view-map">
+                        <i class="fas fa-external-link-alt"></i> Lihat di Google Maps
+                    </a>
+                </div>
+                <div class="map-legend">
+                    <h3>Legenda</h3>
+                    <ul>
+                        <li><span class="legend-icon icon-balai"><i class="fa fa-building"></i></span> Balai Desa</li>
+                        <li><span class="legend-icon icon-school"><i class="fa fa-school"></i></span> Sekolah</li>
+                        <li><span class="legend-icon icon-health"><i class="fa fa-hospital"></i></span> Puskesmas</li>
+                        <li><span class="legend-icon icon-worship"><i class="fa fa-place-of-worship"></i></span> Tempat
+                            Ibadah</li>
+                        <li><span class="legend-icon icon-tourist"><i class="fa fa-mountain"></i></span> Tempat Wisata
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section class="section" id="galeri">
+        <div class="container">
+            <h2 class="section-title">Galeri Desa</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/img/gallery-1.jpg" alt="Kegiatan Masyarakat">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/gallery-2.jpg" alt="Budaya Lokal">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/gallery-3.jpg" alt="Pertanian">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/gallery-4.jpg" alt="Kerajinan">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/gallery-5.jpg" alt="Kegiatan KKN">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/gallery-6.jpg" alt="Lanskap Desa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section class="section bg-light" id="kontak">
+        <div class="container">
+            <h2 class="section-title">Kontak Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>Desa Tampa, Kecamatan Paku, Kabupaten Barito Timur, Kalimantan Tengah</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>+62 800-0000-0000</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@desatampa.id</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                    <p>Desa Tampa, Kec. Paku, Kab. Barito Timur</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#profil">Profil</a></li>
+                        <li><a href="#potensi">Potensi</a></li>
+                        <li><a href="#wisata">Wisata</a></li>
+                        <li><a href="#peta">Peta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-kkn">
+                    <h3>Program KKN</h3>
+                    <p>Website ini dikembangkan oleh Tim KKN 205 Universitas Palangka Raya tahun 2025.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Desa Tampa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
