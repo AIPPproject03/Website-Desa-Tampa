@@ -3,10 +3,34 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mobile menu toggle
   const menuToggle = document.getElementById("menuToggle");
   const menu = document.getElementById("menu");
+  const navMenu = document.querySelector(".nav-menu");
 
   if (menuToggle && menu) {
     menuToggle.addEventListener("click", function () {
       menu.classList.toggle("active");
+      navMenu.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+
+      // Prevent body scroll when menu is open
+      if (menu.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Close menu when clicking overlay
+    document.addEventListener("click", function (e) {
+      if (
+        navMenu.classList.contains("active") &&
+        !menu.contains(e.target) &&
+        !menuToggle.contains(e.target)
+      ) {
+        menu.classList.remove("active");
+        navMenu.classList.remove("active");
+        menuToggle.classList.remove("active");
+        document.body.style.overflow = "";
+      }
     });
   }
 
@@ -15,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
   menuItems.forEach((item) => {
     item.addEventListener("click", function () {
       menu.classList.remove("active");
+      navMenu.classList.remove("active");
+      menuToggle.classList.remove("active");
+      document.body.style.overflow = "";
     });
   });
 
@@ -274,41 +301,220 @@ document.addEventListener("DOMContentLoaded", function () {
       observer.observe(item);
     });
 
-  // Video background handling
+  // Enhanced video handling for all pages
   document.addEventListener("DOMContentLoaded", function () {
-    const video = document.querySelector(".hero-video");
+    // Video background handling for both main page and potensi pages
+    const videos = document.querySelectorAll(".hero-video");
 
+    videos.forEach((video) => {
+      if (video) {
+        // Always try to play video, regardless of device
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              // Video started playing successfully
+              console.log("Video is playing");
+
+              // Hide play button if it exists
+              const heroSection = video.closest(".hero, .potensi-hero");
+              const playBtn = heroSection.querySelector(".video-play-btn");
+              if (playBtn) {
+                playBtn.style.display = "none";
+              }
+            })
+            .catch((error) => {
+              console.log("Video autoplay was prevented: ", error);
+
+              // Show play button for user interaction
+              const heroSection = video.closest(".hero, .potensi-hero");
+              let playBtn = heroSection.querySelector(".video-play-btn");
+
+              if (!playBtn) {
+                // Create play button if it doesn't exist
+                playBtn = document.createElement("button");
+                playBtn.className = "video-play-btn";
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                heroSection.appendChild(playBtn);
+              }
+
+              playBtn.style.display = "flex";
+
+              playBtn.addEventListener("click", function () {
+                video
+                  .play()
+                  .then(() => {
+                    this.style.display = "none";
+                  })
+                  .catch((err) => {
+                    console.log("Failed to play video:", err);
+                    // If video still fails, show fallback
+                    video.style.display = "none";
+                    const fallback =
+                      heroSection.querySelector(".hero-bg-fallback");
+                    if (fallback) {
+                      fallback.style.zIndex = "0";
+                    }
+                  });
+              });
+            });
+        }
+
+        // Handle video loading states
+        video.addEventListener("loadstart", function () {
+          this.style.opacity = "0.7";
+        });
+
+        video.addEventListener("canplay", function () {
+          this.style.opacity = "1";
+        });
+
+        // Handle video errors
+        video.addEventListener("error", function (e) {
+          console.log("Video error occurred: ", e);
+          this.style.display = "none";
+
+          const heroSection = this.closest(".hero, .potensi-hero");
+          const fallback = heroSection.querySelector(".hero-bg-fallback");
+          if (fallback) {
+            fallback.style.zIndex = "0";
+          }
+
+          // Hide play button if video fails
+          const playBtn = heroSection.querySelector(".video-play-btn");
+          if (playBtn) {
+            playBtn.style.display = "none";
+          }
+        });
+
+        // Handle slow connections differently - reduce quality instead of hiding
+        if (navigator.connection) {
+          const connectionType = navigator.connection.effectiveType;
+
+          if (connectionType === "slow-2g" || connectionType === "2g") {
+            // For very slow connections, still try to play but with lower priority
+            video.preload = "metadata";
+            video.addEventListener("loadedmetadata", function () {
+              // Only play if user explicitly wants to
+              const heroSection = this.closest(".hero, .potensi-hero");
+              let playBtn = heroSection.querySelector(".video-play-btn");
+
+              if (!playBtn) {
+                playBtn = document.createElement("button");
+                playBtn.className = "video-play-btn";
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                heroSection.appendChild(playBtn);
+              }
+
+              playBtn.style.display = "flex";
+              playBtn.innerHTML = '<i class="fas fa-wifi"></i>';
+              playBtn.title = "Koneksi lambat - klik untuk memutar video";
+            });
+          }
+        }
+      }
+    });
+
+    // Enhanced animation handling for potensi pages
+    const potentialHeroElements = document.querySelectorAll(
+      ".potensi-hero .hero-icon, .potensi-hero h1, .potensi-hero p"
+    );
+
+    if (potentialHeroElements.length > 0) {
+      // Trigger animations after page load
+      setTimeout(() => {
+        potentialHeroElements.forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add("show");
+          }, 200 * index);
+        });
+      }, 300);
+    }
+  });
+
+  // Enhanced video handling for wisata section
+  const wisataVideos = document.querySelectorAll(".wisata-video");
+
+  wisataVideos.forEach((video) => {
     if (video) {
-      // Force play on iOS devices where autoplay might not work
-      video.play().catch(function (error) {
-        console.log("Video autoplay was prevented: ", error);
+      // Handle video loading and playback
+      const playPromise = video.play();
 
-        // Add play button for mobile devices that block autoplay
-        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-          const playButton = document.createElement("button");
-          playButton.classList.add("video-play-btn");
-          playButton.innerHTML = '<i class="fas fa-play"></i>';
-          document.querySelector(".hero").appendChild(playButton);
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // Video started playing successfully
+            console.log("Wisata video is playing");
+          })
+          .catch((error) => {
+            console.log("Wisata video autoplay was prevented: ", error);
 
-          playButton.addEventListener("click", function () {
-            video.play();
-            playButton.style.display = "none";
+            // Create and show play button for user interaction
+            const videoContainer = video.closest(".wisata-video-container");
+            let playBtn = videoContainer.querySelector(
+              ".wisata-video-play-btn"
+            );
+
+            if (!playBtn) {
+              playBtn = document.createElement("button");
+              playBtn.className = "wisata-video-play-btn";
+              playBtn.innerHTML = '<i class="fas fa-play"></i>';
+              videoContainer.appendChild(playBtn);
+            }
+
+            playBtn.style.display = "flex";
+
+            playBtn.addEventListener("click", function () {
+              video
+                .play()
+                .then(() => {
+                  this.style.display = "none";
+                })
+                .catch((err) => {
+                  console.log("Failed to play wisata video:", err);
+                });
+            });
           });
+      }
+
+      // Handle video loading states
+      video.addEventListener("loadstart", function () {
+        this.style.opacity = "0.8";
+      });
+
+      video.addEventListener("canplay", function () {
+        this.style.opacity = "1";
+      });
+
+      // Error handling - show fallback image
+      video.addEventListener("error", function () {
+        console.log("Wisata video failed to load, using fallback image");
+        this.style.display = "none";
+
+        const fallback = this.closest(".wisata-video-container").querySelector(
+          ".wisata-video-fallback"
+        );
+        if (fallback) {
+          fallback.style.zIndex = "1";
         }
       });
 
-      // If we detect a slow connection, pause the video to save bandwidth
-      if (
-        (navigator.connection &&
-          navigator.connection.effectiveType === "slow-2g") ||
-        (navigator.connection && navigator.connection.effectiveType === "2g")
-      ) {
-        video.pause();
-        video.style.display = "none";
-        // Use a static fallback image instead
-        document.querySelector(".hero").style.backgroundImage =
-          'url("assets/img/hero-fallback.jpg")';
-      }
+      // Pause video when not in viewport (performance optimization)
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              video.play().catch(console.log);
+            } else {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.25 }
+      );
+
+      observer.observe(video);
     }
   });
 });

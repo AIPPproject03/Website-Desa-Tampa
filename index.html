@@ -21,7 +21,7 @@
             </div>
             <nav class="nav-menu">
                 <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
+                    <span class="hamburger-line"></span>
                 </button>
                 <ul class="menu" id="menu">
                     <li><a href="#beranda">Beranda</a></li>
@@ -108,73 +108,144 @@
         <div class="container">
             <h2 class="section-title">Potensi Desa</h2>
             <div class="card-container">
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-icon">
                         <i class="fas fa-seedling"></i>
                     </div>
-                    <h3>Pertanian</h3>
-                    <p>Lahan pertanian yang subur dengan komoditas utama padi, sayuran, dan buah-buahan lokal.</p>
+                    <h3>Potensi Pertanian</h3>
+                    <p>Lahan pertanian yang subur dengan komoditas utama padi, sayuran, dan buah-buahan lokal yang
+                        menjadi sumber pangan utama masyarakat.</p>
+                    <a href="pages/potensi/pertanian.html" class="btn-detail">
+                        <i class="fas fa-arrow-right"></i> Selengkapnya
+                    </a>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-icon">
                         <i class="fas fa-tree"></i>
                     </div>
-                    <h3>Perkebunan</h3>
+                    <h3>Potensi Perkebunan</h3>
                     <p>Perkebunan karet, kelapa sawit, dan tanaman industri lainnya yang menjadi sumber penghasilan
-                        utama.</p>
+                        utama dan ekonomi desa.</p>
+                    <a href="pages/potensi/perkebunan.html" class="btn-detail">
+                        <i class="fas fa-arrow-right"></i> Selengkapnya
+                    </a>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-icon">
-                        <i class="fas fa-hands"></i>
+                        <i class="fas fa-store"></i>
                     </div>
-                    <h3>Kerajinan</h3>
-                    <p>Kerajinan tangan tradisional berbahan dasar rotan, bambu, dan kayu yang bernilai seni tinggi.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-fish"></i>
-                    </div>
-                    <h3>Perikanan</h3>
-                    <p>Budidaya ikan air tawar dan penangkapan ikan di sungai yang menjadi sumber protein masyarakat.
-                    </p>
+                    <h3>Potensi UMKM</h3>
+                    <p>Usaha Mikro Kecil dan Menengah yang meliputi kerajinan tangan, kuliner, dan perdagangan yang
+                        menggerakkan ekonomi lokal.</p>
+                    <a href="pages/potensi/umkm.html" class="btn-detail">
+                        <i class="fas fa-arrow-right"></i> Selengkapnya
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Wisata Section -->
-    <section class="section" id="wisata">
+    <section class="section wisata-section" id="wisata">
         <div class="container">
-            <h2 class="section-title">Wisata Desa</h2>
-            <div class="wisata-slider">
-                <div class="wisata-slide">
-                    <img src="assets/img/wisata-1.jpg" alt="Wisata Alam">
-                    <div class="wisata-info">
-                        <h3>Air Terjun Tampa</h3>
-                        <p>Air terjun dengan keindahan alam yang masih alami dan menyegarkan</p>
-                        <a href="#" class="btn-secondary">Lihat Detail</a>
+            <h2 class="section-title">Wisata Desa Tampa</h2>
+            <p class="section-subtitle">Jelajahi keindahan alam dan budaya yang memukau di Desa Tampa</p>
+
+            <div class="wisata-grid">
+                <!-- Wisata Alam -->
+                <div class="wisata-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="wisata-video-container">
+                        <video autoplay muted loop playsinline class="wisata-video">
+                            <source src="assets/video/wisata-alam.mp4" type="video/mp4">
+                        </video>
+                        <div class="wisata-video-fallback">
+                            <img src="assets/img/wisata-alam.jpg" alt="Wisata Alam Tampa">
+                        </div>
+                        <div class="wisata-overlay"></div>
+                    </div>
+                    <div class="wisata-content">
+                        <div class="wisata-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>Wisata Alam</h3>
+                        <p>Air terjun yang memukau, hutan tropis yang masih alami, dan pemandangan alam yang menyejukkan
+                            mata</p>
+                        <div class="wisata-features">
+                            <span class="feature-tag"><i class="fas fa-camera"></i> Fotogenik</span>
+                            <span class="feature-tag"><i class="fas fa-hiking"></i> Trekking</span>
+                            <span class="feature-tag"><i class="fas fa-swimmer"></i> Berenang</span>
+                        </div>
+                        <a href="pages/wisata/alam.html" class="btn-wisata">
+                            <i class="fas fa-eye"></i> Jelajahi Sekarang
+                        </a>
                     </div>
                 </div>
-                <div class="wisata-slide">
-                    <img src="assets/img/wisata-2.jpg" alt="Wisata Budaya">
-                    <div class="wisata-info">
-                        <h3>Rumah Adat Dayak</h3>
-                        <p>Rumah adat tradisional yang menjadi warisan budaya leluhur</p>
-                        <a href="#" class="btn-secondary">Lihat Detail</a>
+
+                <!-- Wisata Budaya -->
+                <div class="wisata-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="wisata-video-container">
+                        <video autoplay muted loop playsinline class="wisata-video">
+                            <source src="assets/video/wisata-budaya.mp4" type="video/mp4">
+                        </video>
+                        <div class="wisata-video-fallback">
+                            <img src="assets/img/wisata-budaya.jpg" alt="Wisata Budaya Tampa">
+                        </div>
+                        <div class="wisata-overlay"></div>
+                    </div>
+                    <div class="wisata-content">
+                        <div class="wisata-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Wisata Budaya</h3>
+                        <p>Rumah adat Dayak, kesenian tradisional, dan warisan budaya leluhur yang masih terjaga hingga
+                            kini</p>
+                        <div class="wisata-features">
+                            <span class="feature-tag"><i class="fas fa-users"></i> Budaya</span>
+                            <span class="feature-tag"><i class="fas fa-music"></i> Seni</span>
+                            <span class="feature-tag"><i class="fas fa-book"></i> Sejarah</span>
+                        </div>
+                        <a href="pages/wisata/budaya.html" class="btn-wisata">
+                            <i class="fas fa-eye"></i> Jelajahi Sekarang
+                        </a>
                     </div>
                 </div>
-                <div class="wisata-slide">
-                    <img src="assets/img/wisata-3.jpg" alt="Wisata Kuliner">
-                    <div class="wisata-info">
-                        <h3>Kuliner Tradisional</h3>
-                        <p>Berbagai makanan khas yang menggugah selera dari Desa Tampa</p>
-                        <a href="#" class="btn-secondary">Lihat Detail</a>
+
+                <!-- Wisata Kuliner -->
+                <div class="wisata-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="wisata-video-container">
+                        <video autoplay muted loop playsinline class="wisata-video">
+                            <source src="assets/video/wisata-kuliner.mp4" type="video/mp4">
+                        </video>
+                        <div class="wisata-video-fallback">
+                            <img src="assets/img/wisata-kuliner.jpg" alt="Wisata Kuliner Tampa">
+                        </div>
+                        <div class="wisata-overlay"></div>
+                    </div>
+                    <div class="wisata-content">
+                        <div class="wisata-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Wisata Kuliner</h3>
+                        <p>Cita rasa autentik makanan khas Dayak, hasil olahan alam lokal yang menggugah selera</p>
+                        <div class="wisata-features">
+                            <span class="feature-tag"><i class="fas fa-pepper-hot"></i> Khas</span>
+                            <span class="feature-tag"><i class="fas fa-leaf"></i> Alami</span>
+                            <span class="feature-tag"><i class="fas fa-heart"></i> Lezat</span>
+                        </div>
+                        <a href="pages/wisata/kuliner.html" class="btn-wisata">
+                            <i class="fas fa-eye"></i> Jelajahi Sekarang
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="slider-nav">
-                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+
+            <!-- Call to Action -->
+            <div class="wisata-cta">
+                <h3>Siap Berwisata ke Desa Tampa?</h3>
+                <p>Hubungi kami untuk informasi lengkap paket wisata dan panduan perjalanan</p>
+                <a href="#kontak" class="btn-primary-large">
+                    <i class="fas fa-phone"></i> Hubungi Sekarang
+                </a>
             </div>
         </div>
     </section>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potensi Pertanian - Desa Tampa</title>
+    <link rel="stylesheet" href="../../assets/style/main.css">
+    <link rel="stylesheet" href="../../assets/style/potensi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../../assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                <h1>Desa Tampa</h1>
+            </div>
+            <nav class="nav-menu">
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="../../index.html#beranda">Beranda</a></li>
+                    <li><a href="../../index.html#profil">Profil</a></li>
+                    <li><a href="../../index.html#potensi">Potensi</a></li>
+                    <li><a href="../../index.html#wisata">Wisata</a></li>
+                    <li><a href="../../index.html#peta">Peta</a></li>
+                    <li><a href="../../index.html#galeri">Galeri</a></li>
+                    <li><a href="../../index.html#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="../../index.html"><i class="fas fa-home"></i> Beranda</a>
+                <span class="separator">/</span>
+                <a href="../../index.html#potensi">Potensi Desa</a>
+                <span class="separator">/</span>
+                <span class="current">Pertanian</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="potensi-hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="../../assets/video/potensi-pertanian.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+            </video>
+        </div>
+        <div class="hero-bg-fallback">
+            <img src="../../assets/img/pertanian-hero.jpg" alt="Pertanian Desa Tampa">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-icon animate-fade-in">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h1 class="animate-slide-up">Potensi Pertanian Desa Tampa</h1>
+                <p class="animate-fade-in-delay">Mengembangkan sektor pertanian untuk kesejahteraan masyarakat desa
+                </p>
+            </div>
+        </div>
+        <!-- Video play button for mobile devices -->
+        <button class="video-play-btn" id="videoPlayBtn" style="display: none;">
+            <i class="fas fa-play"></i>
+        </button>
+    </section>
+
+    <!-- Content Section -->
+    <section class="potensi-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <article class="main-content">
+                    <div class="content-header">
+                        <h2>Sektor Pertanian yang Berkembang</h2>
+                        <div class="meta-info">
+                            <span><i class="fas fa-calendar"></i> Dipublikasi: 15 Januari 2025</span>
+                            <span><i class="fas fa-user"></i> Tim KKN 205</span>
+                        </div>
+                    </div>
+
+                    <div class="content-body">
+                        <p>Desa Tampa memiliki potensi pertanian yang sangat besar dengan lahan yang subur dan kondisi
+                            iklim yang mendukung. Sektor pertanian menjadi tulang punggung ekonomi masyarakat desa
+                            dengan berbagai komoditas unggulan.</p>
+
+                        <h3>Komoditas Utama</h3>
+                        <div class="commodity-grid">
+                            <div class="commodity-item">
+                                <img src="../../assets/img/padi.jpg" alt="Padi">
+                                <h4>Padi</h4>
+                                <p>Komoditas utama dengan produksi mencapai 500 ton per tahun</p>
+                            </div>
+                            <div class="commodity-item">
+                                <img src="../../assets/img/sayuran.jpg" alt="Sayuran">
+                                <h4>Sayuran</h4>
+                                <p>Berbagai jenis sayuran segar untuk kebutuhan lokal dan regional</p>
+                            </div>
+                            <div class="commodity-item">
+                                <img src="../../assets/img/buah.jpg" alt="Buah-buahan">
+                                <h4>Buah-buahan</h4>
+                                <p>Buah-buahan tropis dengan kualitas premium</p>
+                            </div>
+                        </div>
+
+                        <h3>Program Pengembangan</h3>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check-circle"></i> Penyuluhan teknik bertani modern</li>
+                            <li><i class="fas fa-check-circle"></i> Bantuan alat dan mesin pertanian</li>
+                            <li><i class="fas fa-check-circle"></i> Program sertifikasi organik</li>
+                            <li><i class="fas fa-check-circle"></i> Kemitraan dengan pasar modern</li>
+                        </ul>
+
+                        <div class="stats-container">
+                            <h3>Data Statistik Pertanian</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number">250</div>
+                                    <div class="stat-label">Hektar Lahan</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">150</div>
+                                    <div class="stat-label">Petani Aktif</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">500</div>
+                                    <div class="stat-label">Ton/Tahun</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">15</div>
+                                    <div class="stat-label">Jenis Komoditas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Potensi Lainnya</h3>
+                        <div class="related-links">
+                            <a href="perkebunan.html" class="related-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Perkebunan</span>
+                            </a>
+                            <a href="umkm.html" class="related-item">
+                                <i class="fas fa-store"></i>
+                                <span>UMKM</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Kontak Informasi</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-user"></i> Kepala Seksi Pertanian</p>
+                            <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+                            <p><i class="fas fa-envelope"></i> pertanian@desatampa.id</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Tertarik Bergabung dengan Program Pertanian?</h2>
+                <p>Hubungi kami untuk informasi lebih lanjut tentang program pengembangan pertanian di Desa Tampa</p>
+                <a href="../../index.html#kontak" class="btn-primary">
+                    <i class="fas fa-phone"></i> Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                    <p>Desa Tampa, Kec. Paku, Kab. Barito Timur</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="../../index.html#beranda">Beranda</a></li>
+                        <li><a href="../../index.html#profil">Profil</a></li>
+                        <li><a href="../../index.html#potensi">Potensi</a></li>
+                        <li><a href="../../index.html#wisata">Wisata</a></li>
+                        <li><a href="../../index.html#peta">Peta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-kkn">
+                    <h3>Program KKN</h3>
+                    <p>Website ini dikembangkan oleh Tim KKN 205 Universitas Palangka Raya tahun 2025.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Desa Tampa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

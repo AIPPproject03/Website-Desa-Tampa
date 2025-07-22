@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potensi Perkebunan - Desa Tampa</title>
+    <link rel="stylesheet" href="../../assets/style/main.css">
+    <link rel="stylesheet" href="../../assets/style/potensi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../../assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                <h1>Desa Tampa</h1>
+            </div>
+            <nav class="nav-menu">
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="../../index.html#beranda">Beranda</a></li>
+                    <li><a href="../../index.html#profil">Profil</a></li>
+                    <li><a href="../../index.html#potensi">Potensi</a></li>
+                    <li><a href="../../index.html#wisata">Wisata</a></li>
+                    <li><a href="../../index.html#peta">Peta</a></li>
+                    <li><a href="../../index.html#galeri">Galeri</a></li>
+                    <li><a href="../../index.html#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="../../index.html"><i class="fas fa-home"></i> Beranda</a>
+                <span class="separator">/</span>
+                <a href="../../index.html#potensi">Potensi Desa</a>
+                <span class="separator">/</span>
+                <span class="current">Perkebunan</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="potensi-hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="../../assets/video/potensi-perkebunan.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+            </video>
+        </div>
+        <div class="hero-bg-fallback">
+            <img src="../../assets/img/perkebunan-hero.jpg" alt="Perkebunan Desa Tampa">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-icon animate-fade-in">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h1 class="animate-slide-up">Potensi Perkebunan Desa Tampa</h1>
+                <p class="animate-fade-in-delay">Mengoptimalkan sumber daya alam untuk kemakmuran bersama</p>
+            </div>
+        </div>
+        <!-- Video play button for mobile devices -->
+        <button class="video-play-btn" id="videoPlayBtn" style="display: none;">
+            <i class="fas fa-play"></i>
+        </button>
+    </section>
+
+    <!-- Content Section -->
+    <section class="potensi-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <article class="main-content">
+                    <div class="content-header">
+                        <h2>Sektor Perkebunan yang Berkembang Pesat</h2>
+                        <div class="meta-info">
+                            <span><i class="fas fa-calendar"></i> Dipublikasi: 15 Januari 2025</span>
+                            <span><i class="fas fa-user"></i> Tim KKN 205</span>
+                        </div>
+                    </div>
+
+                    <div class="content-body">
+                        <p>Desa Tampa memiliki kondisi geografis dan iklim yang sangat mendukung untuk pengembangan
+                            sektor perkebunan. Dengan lahan yang luas dan subur, desa ini menghasilkan berbagai
+                            komoditas perkebunan unggulan yang menjadi sumber pendapatan utama masyarakat.</p>
+
+                        <h3>Komoditas Perkebunan Unggulan</h3>
+                        <div class="commodity-grid">
+                            <div class="commodity-item">
+                                <img src="../../assets/img/coklat.jpg" alt="Pohon Coklat">
+                                <h4>Pohon Coklat</h4>
+                                <p>Tanaman coklat dengan kualitas biji yang baik dan produktivitas tinggi</p>
+                            </div>
+                            <div class="commodity-item">
+                                <img src="../../assets/img/karet.jpg" alt="Getah Karet">
+                                <h4>Getah Karet</h4>
+                                <p>Perkebunan karet yang menghasilkan lateks berkualitas tinggi</p>
+                            </div>
+                            <div class="commodity-item">
+                                <img src="../../assets/img/sawit.jpg" alt="Kelapa Sawit">
+                                <h4>Kelapa Sawit</h4>
+                                <p>Tanaman sawit yang menghasilkan CPO dengan rendemen tinggi</p>
+                            </div>
+                        </div>
+
+                        <h3>Potensi dan Keunggulan</h3>
+                        <div class="potential-section">
+                            <div class="potential-item">
+                                <div class="potential-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div class="potential-content">
+                                    <h4>Pohon Coklat (Theobroma cacao)</h4>
+                                    <p>Perkebunan coklat di Desa Tampa menghasilkan biji coklat berkualitas premium
+                                        dengan karakteristik rasa yang khas. Area perkebunan seluas ±80 hektar dengan
+                                        produktivitas mencapai 1,2 ton biji kering per hektar per tahun.</p>
+                                    <ul>
+                                        <li>Varietas lokal dan hibrida yang adaptif</li>
+                                        <li>Kualitas biji dengan kadar lemak tinggi</li>
+                                        <li>Fermentasi tradisional yang menghasilkan cita rasa unik</li>
+                                        <li>Potensi untuk industri coklat artisan</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="potential-item">
+                                <div class="potential-icon">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div class="potential-content">
+                                    <h4>Getah Karet (Hevea brasiliensis)</h4>
+                                    <p>Perkebunan karet merupakan salah satu andalan ekonomi desa dengan luas area ±120
+                                        hektar. Pohon karet yang sudah produktif menghasilkan lateks dengan kualitas
+                                        yang memenuhi standar industri.</p>
+                                    <ul>
+                                        <li>Pohon karet umur 15-25 tahun yang produktif</li>
+                                        <li>Sistem penyadapan yang efisien</li>
+                                        <li>Kualitas lateks dengan KKK 60% ke atas</li>
+                                        <li>Pengolahan menjadi sheet dan crepe</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="potential-item">
+                                <div class="potential-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="potential-content">
+                                    <h4>Kelapa Sawit (Elaeis guineensis)</h4>
+                                    <p>Perkebunan kelapa sawit seluas ±200 hektar menjadi komoditas unggulan dengan
+                                        tingkat produktivitas yang baik. Tanaman sawit menghasilkan tandan buah segar
+                                        (TBS) berkualitas tinggi.</p>
+                                    <ul>
+                                        <li>Tanaman sawit umur 8-20 tahun yang produktif</li>
+                                        <li>Produktivitas 18-22 ton TBS per hektar per tahun</li>
+                                        <li>Rendemen minyak 22-24%</li>
+                                        <li>Kemitraan dengan pabrik kelapa sawit terdekat</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Program Pengembangan Perkebunan</h3>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check-circle"></i> Peremajaan tanaman perkebunan yang sudah tua</li>
+                            <li><i class="fas fa-check-circle"></i> Pelatihan teknik budidaya dan pemeliharaan modern
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> Pembentukan kelompok tani perkebunan</li>
+                            <li><i class="fas fa-check-circle"></i> Bantuan bibit unggul dan pupuk</li>
+                            <li><i class="fas fa-check-circle"></i> Pengembangan pengolahan hasil perkebunan</li>
+                            <li><i class="fas fa-check-circle"></i> Kemitraan dengan industri pengolahan</li>
+                        </ul>
+
+                        <div class="stats-container">
+                            <h3>Data Statistik Perkebunan</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number">400</div>
+                                    <div class="stat-label">Hektar Lahan</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">85</div>
+                                    <div class="stat-label">Petani Kebun</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">1,200</div>
+                                    <div class="stat-label">Ton/Tahun</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">3</div>
+                                    <div class="stat-label">Komoditas Utama</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Tantangan dan Solusi</h3>
+                        <p>Meskipun memiliki potensi yang besar, sektor perkebunan di Desa Tampa menghadapi beberapa
+                            tantangan seperti fluktuasi harga komoditas, serangan hama dan penyakit, serta keterbatasan
+                            akses pasar. Untuk mengatasi hal tersebut, diperlukan pendekatan yang komprehensif melalui
+                            diversifikasi tanaman, penerapan teknologi, dan penguatan kelembagaan petani.</p>
+
+                        <p>Ke depannya, pengembangan sektor perkebunan akan difokuskan pada peningkatan produktivitas,
+                            kualitas hasil, dan nilai tambah melalui pengolahan. Hal ini diharapkan dapat meningkatkan
+                            kesejahteraan petani dan memberikan kontribusi yang lebih besar bagi perekonomian desa.</p>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Potensi Lainnya</h3>
+                        <div class="related-links">
+                            <a href="pertanian.html" class="related-item">
+                                <i class="fas fa-seedling"></i>
+                                <span>Pertanian</span>
+                            </a>
+                            <a href="umkm.html" class="related-item">
+                                <i class="fas fa-store"></i>
+                                <span>UMKM</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Kontak Informasi</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-user"></i> Kepala Seksi Perkebunan</p>
+                            <p><i class="fas fa-phone"></i> +62 812-3456-7892</p>
+                            <p><i class="fas fa-envelope"></i> perkebunan@desatampa.id</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Harga Komoditas Terkini</h3>
+                        <div class="price-info">
+                            <div class="price-item">
+                                <span class="commodity">Biji Coklat Kering</span>
+                                <span class="price">Rp 28,000/kg</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="commodity">Lateks Karet</span>
+                                <span class="price">Rp 8,500/kg</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="commodity">TBS Sawit</span>
+                                <span class="price">Rp 1,200/kg</span>
+                            </div>
+                            <small><i class="fas fa-info-circle"></i> Harga per Januari 2025</small>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Bergabung dengan Program Perkebunan Berkelanjutan</h2>
+                <p>Dapatkan informasi lengkap tentang program pengembangan perkebunan dan peluang kemitraan di Desa
+                    Tampa</p>
+                <a href="../../index.html#kontak" class="btn-primary">
+                    <i class="fas fa-handshake"></i> Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                    <p>Desa Tampa, Kec. Paku, Kab. Barito Timur</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="../../index.html#beranda">Beranda</a></li>
+                        <li><a href="../../index.html#profil">Profil</a></li>
+                        <li><a href="../../index.html#potensi">Potensi</a></li>
+                        <li><a href="../../index.html#wisata">Wisata</a></li>
+                        <li><a href="../../index.html#peta">Peta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-kkn">
+                    <h3>Program KKN</h3>
+                    <p>Website ini dikembangkan oleh Tim KKN 205 Universitas Palangka Raya tahun 2025.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Desa Tampa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

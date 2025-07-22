@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Alam - Desa Tampa</title>
+    <link rel="stylesheet" href="../../assets/style/main.css">
+    <link rel="stylesheet" href="../../assets/style/potensi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../../assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                <h1>Desa Tampa</h1>
+            </div>
+            <nav class="nav-menu">
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="../../index.html#beranda">Beranda</a></li>
+                    <li><a href="../../index.html#profil">Profil</a></li>
+                    <li><a href="../../index.html#potensi">Potensi</a></li>
+                    <li><a href="../../index.html#wisata">Wisata</a></li>
+                    <li><a href="../../index.html#peta">Peta</a></li>
+                    <li><a href="../../index.html#galeri">Galeri</a></li>
+                    <li><a href="../../index.html#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="../../index.html"><i class="fas fa-home"></i> Beranda</a>
+                <span class="separator">/</span>
+                <a href="../../index.html#wisata">Wisata</a>
+                <span class="separator">/</span>
+                <span class="current">Wisata Alam</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="potensi-hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="../../assets/video/wisata-alam-detail.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-bg-fallback">
+            <img src="../../assets/img/wisata-alam-hero.jpg" alt="Wisata Alam Desa Tampa">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-icon animate-fade-in">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h1 class="animate-slide-up">Wisata Alam Desa Tampa</h1>
+                <p class="animate-fade-in-delay">Rasakan keindahan alam yang masih asri dan mempesona</p>
+            </div>
+        </div>
+        <button class="video-play-btn" id="videoPlayBtn" style="display: none;">
+            <i class="fas fa-play"></i>
+        </button>
+    </section>
+
+    <!-- Content Section -->
+    <section class="potensi-content">
+        <div class="container">
+            <div class="content-grid">
+                <article class="main-content">
+                    <div class="content-header">
+                        <h2>Keindahan Alam yang Memukau</h2>
+                        <div class="meta-info">
+                            <span><i class="fas fa-calendar"></i> Dipublikasi: 15 Januari 2025</span>
+                            <span><i class="fas fa-user"></i> Tim KKN 205</span>
+                        </div>
+                    </div>
+
+                    <div class="content-body">
+                        <p>Desa Tampa memiliki kekayaan alam yang luar biasa indah. Dikelilingi oleh hutan tropis yang
+                            masih asri, desa ini menawarkan berbagai destinasi wisata alam yang memukau dan menyegarkan
+                            jiwa.</p>
+
+                        <h3>Destinasi Wisata Alam Unggulan</h3>
+                        <div class="commodity-grid">
+                            <div class="commodity-item">
+                                <img src="../../assets/img/air-terjun.jpg" alt="Air Terjun Tampa">
+                                <h4>Air Terjun Tampa</h4>
+                                <p>Air terjun setinggi 25 meter dengan kolam alami yang jernih</p>
+                            </div>
+                            <div class="commodity-item">
+                                <img src="../../assets/img/hutan-tropis.jpg" alt="Hutan Tropis">
+                                <h4>Hutan Tropis</h4>
+                                <p>Trekking melalui hutan dengan flora dan fauna yang beragam</p>
+                            </div>
+                            <div class="commodity-item">
+                                <img src="../../assets/img/sungai.jpg" alt="Sungai Tampa">
+                                <h4>Sungai Tampa</h4>
+                                <p>Sungai jernih yang cocok untuk aktivitas air dan memancing</p>
+                            </div>
+                        </div>
+
+                        <h3>Aktivitas yang Dapat Dilakukan</h3>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check-circle"></i> Berenang di kolam alami air terjun</li>
+                            <li><i class="fas fa-check-circle"></i> Trekking dan hiking melalui jalur hutan</li>
+                            <li><i class="fas fa-check-circle"></i> Photography dan videografi alam</li>
+                            <li><i class="fas fa-check-circle"></i> Bird watching dan wildlife spotting</li>
+                            <li><i class="fas fa-check-circle"></i> Camping di area yang telah disediakan</li>
+                            <li><i class="fas fa-check-circle"></i> Memancing di sungai Tampa</li>
+                        </ul>
+
+                        <div class="stats-container">
+                            <h3>Informasi Wisata</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number">25m</div>
+                                    <div class="stat-label">Tinggi Air Terjun</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">3km</div>
+                                    <div class="stat-label">Jalur Trekking</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">2-3</div>
+                                    <div class="stat-label">Jam Perjalanan</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">5</div>
+                                    <div class="stat-label">Spot Foto</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Wisata Lainnya</h3>
+                        <div class="related-links">
+                            <a href="budaya.html" class="related-item">
+                                <i class="fas fa-home"></i>
+                                <span>Wisata Budaya</span>
+                            </a>
+                            <a href="kuliner.html" class="related-item">
+                                <i class="fas fa-utensils"></i>
+                                <span>Wisata Kuliner</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Informasi Praktis</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-clock"></i> Buka: 08:00 - 17:00</p>
+                            <p><i class="fas fa-ticket-alt"></i> Tiket: Rp 5,000</p>
+                            <p><i class="fas fa-car"></i> Parkir: Tersedia</p>
+                            <p><i class="fas fa-camera"></i> Foto: Gratis</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Siap Menjelajahi Keindahan Alam Tampa?</h2>
+                <p>Hubungi kami untuk informasi paket wisata dan panduan lengkap berwisata alam di Desa Tampa</p>
+                <a href="../../index.html#kontak" class="btn-primary">
+                    <i class="fas fa-phone"></i> Hubungi Guide
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                    <p>Desa Tampa, Kec. Paku, Kab. Barito Timur</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="../../index.html#beranda">Beranda</a></li>
+                        <li><a href="../../index.html#profil">Profil</a></li>
+                        <li><a href="../../index.html#potensi">Potensi</a></li>
+                        <li><a href="../../index.html#wisata">Wisata</a></li>
+                        <li><a href="../../index.html#peta">Peta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-kkn">
+                    <h3>Program KKN</h3>
+                    <p>Website ini dikembangkan oleh Tim KKN 205 Universitas Palangka Raya tahun 2025.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Desa Tampa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

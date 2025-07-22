@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potensi UMKM - Desa Tampa</title>
+    <link rel="stylesheet" href="../../assets/style/main.css">
+    <link rel="stylesheet" href="../../assets/style/potensi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../../assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                <h1>Desa Tampa</h1>
+            </div>
+            <nav class="nav-menu">
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="../../index.html#beranda">Beranda</a></li>
+                    <li><a href="../../index.html#profil">Profil</a></li>
+                    <li><a href="../../index.html#potensi">Potensi</a></li>
+                    <li><a href="../../index.html#wisata">Wisata</a></li>
+                    <li><a href="../../index.html#peta">Peta</a></li>
+                    <li><a href="../../index.html#galeri">Galeri</a></li>
+                    <li><a href="../../index.html#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="../../index.html"><i class="fas fa-home"></i> Beranda</a>
+                <span class="separator">/</span>
+                <a href="../../index.html#potensi">Potensi Desa</a>
+                <span class="separator">/</span>
+                <span class="current">UMKM</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="potensi-hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="../../assets/video/potensi-umkm.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+            </video>
+        </div>
+        <div class="hero-bg-fallback">
+            <img src="../../assets/img/umkm-hero.jpg" alt="UMKM Desa Tampa">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-icon animate-fade-in">
+                    <i class="fas fa-store"></i>
+                </div>
+                <h1 class="animate-slide-up">Potensi UMKM Desa Tampa</h1>
+                <p class="animate-fade-in-delay">Mengembangkan usaha mikro kecil menengah untuk pemberdayaan ekonomi
+                    masyarakat</p>
+            </div>
+        </div>
+        <!-- Video play button for mobile devices -->
+        <button class="video-play-btn" id="videoPlayBtn" style="display: none;">
+            <i class="fas fa-play"></i>
+        </button>
+    </section>
+
+    <!-- Content Section -->
+    <section class="potensi-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <article class="main-content">
+                    <div class="content-header">
+                        <h2>Usaha Mikro Kecil dan Menengah yang Berkembang</h2>
+                        <div class="meta-info">
+                            <span><i class="fas fa-calendar"></i> Dipublikasi: 15 Januari 2025</span>
+                            <span><i class="fas fa-user"></i> Tim KKN 205</span>
+                        </div>
+                    </div>
+
+                    <div class="content-body">
+                        <p>Desa Tampa memiliki potensi UMKM yang sangat besar dengan berbagai jenis usaha yang
+                            dijalankan oleh masyarakat. Sektor UMKM menjadi tulang punggung ekonomi masyarakat dengan
+                            mengoptimalkan sumber daya lokal dan kearifan tradisional.</p>
+
+                        <h3>Jenis UMKM Unggulan</h3>
+                        <div class="commodity-grid">
+                            <div class="commodity-item">
+                                <img src="../../assets/img/kerajinan.jpg" alt="Kerajinan">
+                                <h4>Kerajinan Tangan</h4>
+                                <p>Kerajinan rotan, bambu, dan kayu dengan nilai seni tinggi</p>
+                            </div>
+                            <div class="commodity-item">
+                                <img src="../../assets/img/kuliner.jpg" alt="Kuliner">
+                                <h4>Kuliner Tradisional</h4>
+                                <p>Makanan dan minuman khas dengan cita rasa autentik</p>
+                            </div>
+                            <div class="commodity-item">
+                                <img src="../../assets/img/perdagangan.jpg" alt="Perdagangan">
+                                <h4>Perdagangan Lokal</h4>
+                                <p>Warung, toko sembako, dan perdagangan hasil bumi</p>
+                            </div>
+                        </div>
+
+                        <h3>Program Pemberdayaan UMKM</h3>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check-circle"></i> Pelatihan kewirausahaan dan manajemen usaha</li>
+                            <li><i class="fas fa-check-circle"></i> Bantuan modal usaha mikro</li>
+                            <li><i class="fas fa-check-circle"></i> Pendampingan pemasaran digital</li>
+                            <li><i class="fas fa-check-circle"></i> Pembentukan koperasi dan kelompok usaha</li>
+                            <li><i class="fas fa-check-circle"></i> Sertifikasi produk dan legalitas usaha</li>
+                        </ul>
+
+                        <div class="stats-container">
+                            <h3>Data Statistik UMKM</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number">75</div>
+                                    <div class="stat-label">Unit UMKM</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">120</div>
+                                    <div class="stat-label">Wirausaha Aktif</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">25</div>
+                                    <div class="stat-label">Jenis Produk</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">3</div>
+                                    <div class="stat-label">Koperasi</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Produk Unggulan</h3>
+                        <p>Desa Tampa menghasilkan berbagai produk unggulan yang telah dikenal di tingkat regional.
+                            Produk-produk ini memanfaatkan bahan baku lokal dan teknik tradisional yang diwariskan
+                            turun-temurun, dikombinasikan dengan inovasi modern untuk meningkatkan kualitas dan daya
+                            saing.</p>
+
+                        <p>Kerajinan tangan dari rotan dan bambu menjadi salah satu produk unggulan yang banyak
+                            diminati, tidak hanya sebagai barang fungsional tetapi juga sebagai hiasan dengan nilai seni
+                            tinggi. Sementara itu, kuliner tradisional seperti kue khas dan makanan olahan hasil
+                            pertanian menjadi daya tarik tersendiri bagi wisatawan dan masyarakat sekitar.</p>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Potensi Lainnya</h3>
+                        <div class="related-links">
+                            <a href="pertanian.html" class="related-item">
+                                <i class="fas fa-seedling"></i>
+                                <span>Pertanian</span>
+                            </a>
+                            <a href="perkebunan.html" class="related-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Perkebunan</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Kontak Informasi</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-user"></i> Koordinator UMKM</p>
+                            <p><i class="fas fa-phone"></i> +62 812-3456-7891</p>
+                            <p><i class="fas fa-envelope"></i> umkm@desatampa.id</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Jam Operasional</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 16:00</p>
+                            <p><i class="fas fa-clock"></i> Sabtu: 08:00 - 12:00</p>
+                            <p><i class="fas fa-clock"></i> Minggu: Tutup</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Tertarik Mengembangkan Usaha di Desa Tampa?</h2>
+                <p>Hubungi kami untuk informasi lebih lanjut tentang program pemberdayaan UMKM dan peluang usaha di Desa
+                    Tampa</p>
+                <a href="../../index.html#kontak" class="btn-primary">
+                    <i class="fas fa-handshake"></i> Konsultasi Gratis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/img/logo-desa.png" alt="Logo Desa Tampa">
+                    <p>Desa Tampa, Kec. Paku, Kab. Barito Timur</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="../../index.html#beranda">Beranda</a></li>
+                        <li><a href="../../index.html#profil">Profil</a></li>
+                        <li><a href="../../index.html#potensi">Potensi</a></li>
+                        <li><a href="../../index.html#wisata">Wisata</a></li>
+                        <li><a href="../../index.html#peta">Peta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-kkn">
+                    <h3>Program KKN</h3>
+                    <p>Website ini dikembangkan oleh Tim KKN 205 Universitas Palangka Raya tahun 2025.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Desa Tampa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
