@@ -851,6 +851,130 @@
   color: #27ae60;
 }
 
+/* Styles untuk catatan observasi */
+.note {
+  background-color: #fff8e1;
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #5d4037;
+  border-radius: 0 4px 4px 0;
+}
+
+.note i {
+  margin-right: 8px;
+  color: #ff9800;
+}
+
+/* Styles untuk sidebar info list */
+.info-list {
+  margin-top: 10px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.info-item:hover {
+  background-color: #e3f2fd;
+}
+
+.info-item i {
+  font-size: 16px;
+  color: #2196f3;
+  margin-right: 12px;
+  margin-top: 2px;
+}
+
+.info-item span {
+  font-size: 14px;
+  color: #37474f;
+  line-height: 1.5;
+}
+
+/* Styles untuk benefit list */
+.benefit-list {
+  margin-top: 15px;
+}
+
+.benefit-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.benefit-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.benefit-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e8f5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.benefit-icon i {
+  color: #4caf50;
+  font-size: 16px;
+}
+
+.benefit-content h4 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  color: #2e7d32;
+}
+
+.benefit-content p {
+  margin: 0;
+  font-size: 13px;
+  color: #546e7a;
+  line-height: 1.5;
+}
+
+/* Additional style for potential-icon */
+.potential-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.potential-item {
+  display: flex;
+  margin-bottom: 30px;
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.potential-item:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .highlight-box {
