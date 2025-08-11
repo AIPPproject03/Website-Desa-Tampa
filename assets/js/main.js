@@ -517,4 +517,92 @@ document.addEventListener("DOMContentLoaded", function () {
       observer.observe(video);
     }
   });
+
+  // Animasi pada statistik dan infrastruktur
+  document.addEventListener("DOMContentLoaded", function () {
+    const animateOnScroll = () => {
+      // Progress bars for infrastructure
+      document.querySelectorAll(".progress-fill").forEach((bar) => {
+        const rect = bar.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          setTimeout(() => {
+            bar.style.width = bar.style.width;
+          }, 300);
+        }
+      });
+
+      // Product stats animation
+      document.querySelectorAll(".product-stat").forEach((stat, index) => {
+        const rect = stat.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          setTimeout(() => {
+            stat.classList.add("animate");
+          }, index * 100);
+        }
+      });
+    };
+
+    // Run once on page load
+    animateOnScroll();
+
+    // Run on scroll
+    window.addEventListener("scroll", animateOnScroll);
+
+    // Add hover effects for sector items
+    document
+      .querySelectorAll(".sector-item, .infra-item, .tech-item")
+      .forEach((item) => {
+        item.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-5px)";
+          this.style.boxShadow = "0 10px 20px rgba(0,0,0,0.1)";
+        });
+
+        item.addEventListener("mouseleave", function () {
+          this.style.transform = "";
+          this.style.boxShadow = "";
+        });
+      });
+  });
+
+  // Statistik animations
+  document.addEventListener("DOMContentLoaded", function () {
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Function to animate charts when they come into view
+    function animateChartsOnScroll() {
+      const statsSection = document.getElementById("statistik");
+      if (!statsSection) return;
+
+      // If stats section is in viewport
+      if (isInViewport(statsSection)) {
+        // Animate bars
+        const chartBars = document.querySelectorAll(".chart-bar");
+        chartBars.forEach((bar) => {
+          setTimeout(() => {
+            bar.style.height = bar.style.height;
+          }, 300);
+        });
+
+        // Only run once
+        window.removeEventListener("scroll", animateChartsOnScroll);
+      }
+    }
+
+    // Add scroll event listener
+    window.addEventListener("scroll", animateChartsOnScroll);
+
+    // Initial check
+    animateChartsOnScroll();
+  });
 });
