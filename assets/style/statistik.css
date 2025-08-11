@@ -139,19 +139,26 @@
   color: #34495e;
 }
 
+.age-chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
 .age-chart {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 150px;
-  padding: 0 10px;
+  height: 200px;
+  margin-bottom: 15px;
 }
 
 .chart-bar {
   width: 12%;
   background: linear-gradient(to top, #3498db, #2980b9);
-  border-radius: 3px 3px 0 0;
   position: relative;
+  border-radius: 4px 4px 0 0;
+  transition: height 1s ease-in-out;
 }
 
 .chart-bar:hover {
@@ -161,12 +168,12 @@
 .chart-bar::before {
   content: attr(data-count);
   position: absolute;
-  top: -20px;
+  top: -25px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 10px;
-  font-weight: bold;
-  color: #34495e;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
 .chart-bar::after {
@@ -178,6 +185,26 @@
   font-size: 10px;
   color: #7f8c8d;
   white-space: nowrap;
+}
+
+.age-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.age-label {
+  width: 12%;
+  text-align: center;
+  font-size: 12px;
+  color: #7f8c8d;
+  line-height: 1.2;
+  padding-top: 8px;
+  border-top: 1px dashed #e0e0e0;
+  position: relative;
+}
+
+.age-label .count {
+  display: none; /* Hide duplicate counts as they're already shown on bars */
 }
 
 /* Education chart */
@@ -879,5 +906,42 @@
 
   .infra-container {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .age-labels {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .age-label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+    padding-top: 0;
+    border-top: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .age-label .count {
+    display: inline-block;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .age-chart {
+    height: 120px;
+    margin-bottom: 25px;
+  }
+
+  .chart-bar {
+    width: 11%;
+  }
+
+  .chart-bar::before {
+    display: none;
   }
 }

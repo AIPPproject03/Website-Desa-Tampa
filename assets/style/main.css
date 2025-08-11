@@ -403,6 +403,69 @@ a:hover {
   margin-left: 20px;
 }
 
+/* Visi Misi Styles */
+.visi-misi-container {
+  margin-top: 30px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+.visi-box {
+  background: linear-gradient(135deg, #f6f9fc, #edf2f7);
+  border-left: 4px solid #3498db;
+  padding: 15px 20px;
+  margin: 15px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.visi-box p {
+  margin: 0;
+  font-size: 18px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.misi-list {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.misi-list li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 5px;
+}
+
+.misi-list li:last-child {
+  margin-bottom: 0;
+}
+
+.profil-text h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 22px;
+}
+
+.profil-text h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #34495e;
+  font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .visi-box p {
+    font-size: 16px;
+  }
+
+  .misi-list li {
+    font-size: 14px;
+  }
+}
+
 /* Potensi Desa Section Styles */
 .potensi-intro {
   text-align: center;
@@ -551,44 +614,56 @@ a:hover {
 }
 
 /* Infrastructure section styles */
+/* Perbaikan tampilan Infrastruktur Pendukung Ekonomi */
 .infrastructure-section {
   background-color: #f8f9fa;
   border-radius: 10px;
-  padding: 30px;
+  padding: 25px;
+  margin-top: 40px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  margin-top: 20px;
+  width: 100%;
 }
 
 .infrastructure-section h3 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #2c3e50;
   font-size: 20px;
 }
 
-.infra-grid-small {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.infra-grid-small.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 15px;
 }
 
+.infra-grid-small.horizontal .infra-tile {
+  flex: 1 1 18%;
+  min-width: 160px;
+  max-width: 220px;
+}
+
+/* Desain yang lebih konsisten untuk tile */
 .infra-tile {
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 15px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 80px; /* Tetapkan tinggi yang konsisten */
 }
 
 .infra-tile:hover {
   transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .infra-tile-icon {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background-color: rgba(52, 152, 219, 0.1);
   color: #3498db;
@@ -600,40 +675,52 @@ a:hover {
 }
 
 .infra-tile-icon i {
-  font-size: 18px;
+  font-size: 20px;
 }
 
-.infra-tile-content {
-  flex: 1;
+/* Warna berbeda untuk setiap ikon */
+.infra-tile:nth-child(1) .infra-tile-icon {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #27ae60;
 }
 
-.infra-tile-value {
-  display: block;
-  font-weight: 600;
-  font-size: 16px;
-  color: #2c3e50;
-  line-height: 1.2;
+.infra-tile:nth-child(2) .infra-tile-icon {
+  background-color: rgba(230, 126, 34, 0.1);
+  color: #e67e22;
 }
 
-.infra-tile-label {
-  font-size: 12px;
-  color: #7f8c8d;
+.infra-tile:nth-child(3) .infra-tile-icon {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+}
+
+.infra-tile:nth-child(4) .infra-tile-icon {
+  background-color: rgba(241, 196, 15, 0.1);
+  color: #f1c40f;
+}
+
+.infra-tile:nth-child(5) .infra-tile-icon {
+  background-color: rgba(155, 89, 182, 0.1);
+  color: #9b59b6;
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .card-container {
-    grid-template-columns: 1fr;
+@media (max-width: 992px) {
+  .infra-grid-small.horizontal .infra-tile {
+    flex: 1 1 30%;
   }
+}
 
-  .infra-grid-small {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 768px) {
+  .infra-grid-small.horizontal .infra-tile {
+    flex: 1 1 45%;
   }
 }
 
 @media (max-width: 480px) {
-  .infra-grid-small {
-    grid-template-columns: 1fr;
+  .infra-grid-small.horizontal .infra-tile {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
