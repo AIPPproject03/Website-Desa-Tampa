@@ -8,6 +8,9 @@
     <link rel="shortcut icon" href="assets/img/logo-desa.png" type="image/png">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/statistik.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="assets/style/maps.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -968,6 +971,7 @@
     <section class="section bg-light" id="peta">
         <div class="container">
             <h2 class="section-title">Peta Interaktif Desa Tampa</h2>
+            <p class="section-subtitle">Jelajahi lokasi-lokasi penting di Desa Tampa secara interaktif</p>
             <div class="map-container">
                 <div class="map-wrapper">
                     <div id="mapInteraktif" class="map"></div>
@@ -978,18 +982,40 @@
                 <div class="map-legend">
                     <h3>Legenda</h3>
                     <ul>
-                        <li><span class="legend-icon icon-balai"><i class="fa fa-building"></i></span> Balai Desa</li>
-                        <li><span class="legend-icon icon-school"><i class="fa fa-school"></i></span> Sekolah</li>
-                        <li><span class="legend-icon icon-health"><i class="fa fa-hospital"></i></span> Puskesmas</li>
-                        <li><span class="legend-icon icon-worship"><i class="fa fa-place-of-worship"></i></span> Tempat
-                            Ibadah</li>
-                        <li><span class="legend-icon icon-tourist"><i class="fa fa-mountain"></i></span> Tempat Wisata
+                        <li><span class="legend-icon icon-balai"><i class="fas fa-building"></i></span> Balai Desa</li>
+                        <li><span class="legend-icon icon-tree"><i class="fas fa-tree"></i></span> Kebun Kokoa</li>
+                        <li><span class="legend-icon icon-church"><i class="fas fa-church"></i></span> Gereja Beto WAO
                         </li>
+                        <li><span class="legend-icon icon-market"><i class="fas fa-store"></i></span> Pasar Tradisional
+                        </li>
+                        <li><span class="legend-icon icon-market"><i class="fas fa-shopping-basket"></i></span> Pasar
+                            Kamis</li>
+                        <li><span class="legend-icon icon-water"><i class="fas fa-water"></i></span> Bendungan Tampa
+                        </li>
+                        <li><span class="legend-icon icon-health"><i class="fas fa-hospital"></i></span> Puskesmas Paku
+                        </li>
+                        <li><span class="legend-icon icon-government"><i class="fas fa-landmark"></i></span> Kantor
+                            Camat Paku</li>
+                        <li><span class="legend-icon icon-church"><i class="fas fa-church"></i></span> Gereja Katolik
+                            Stasi Santo Yohanes Rasul</li>
+                        <li><span class="legend-icon icon-mosque"><i class="fas fa-mosque"></i></span> Masjid An Noor
+                            Tampa</li>
                     </ul>
+                    <div class="map-info">
+                        <h4>Tentang Desa Tampa</h4>
+                        <p>Desa Tampa terletak di Kecamatan Paku, Kabupaten Barito Timur, dengan jarak 1 km dari pusat
+                            kecamatan dan 29 km dari pusat kabupaten.</p>
+                        <p>Luas wilayah: <strong>5.000 hektar</strong></p>
+                        <div class="map-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Klik tombol "Aktifkan Peta Interaktif" untuk menjelajahi peta secara lengkap</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Galeri Section -->
     <section class="section" id="galeri">
@@ -1088,7 +1114,9 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="assets/js/maps.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 
