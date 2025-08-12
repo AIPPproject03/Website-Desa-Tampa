@@ -1,0 +1,250 @@
+/* Smooth Scrolling Animations */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Parallax Base Effects */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-position 0.1s ease-out;
+  will-change: transform;
+}
+
+/* Parallax Hero Section Enhancement */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-parallax-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Section Animation Effects on Scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered Animation for Items in a Container */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Float Animation for Elements */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Subtle rotation animation */
+.rotate-animation {
+  animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Subtle pulse animation */
+.pulse-animation {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Moving Background Effect for Sections */
+.bg-move {
+  background-size: 120% auto;
+  transition: background-position 0.8s ease-out;
+}
+
+.bg-move:hover {
+  background-position: right center;
+}
+
+/* Add depth to cards on hover */
+.depth-effect {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.depth-effect:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Parallax scrolling sections */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%; /* Extra space for parallax movement */
+  z-index: -1;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+/* Subtle image zoom effect on hover */
+.zoom-effect {
+  overflow: hidden;
+}
+
+.zoom-effect img {
+  transition: transform 0.5s ease;
+}
+
+.zoom-effect:hover img {
+  transform: scale(1.05);
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right,
+  .scale-in,
+  .stagger-item {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .float-animation,
+  .rotate-animation,
+  .pulse-animation {
+    animation: none !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Specific section enhancements */
+#potensi {
+  position: relative;
+  overflow: hidden;
+}
+
+#potensi::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle at top right,
+    rgba(46, 139, 87, 0.05),
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+#wisata {
+  position: relative;
+}
+
+#wisata::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Staggered entrance for statistik items */
+.stats-card {
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
