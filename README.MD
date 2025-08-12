@@ -1,7 +1,5 @@
 # Website Desa Tampa - Barito Timur
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d9f3546a-3c2e-44fe-b5e6-97bb52bc45cc/deploy-status)](https://desatampa.netlify.app/)
-
 ![Desa Tampa Logo](assets/img/logo-desa.png)
 
 ## 🌟 Tentang Website
