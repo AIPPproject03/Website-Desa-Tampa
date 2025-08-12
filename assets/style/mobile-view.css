@@ -1,0 +1,153 @@
+/* Mobile Bottom Navigation */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding-bottom: env(safe-area-inset-bottom); /* For iPhone X and newer */
+}
+
+.mobile-nav-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 5px;
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #777;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-item i {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.mobile-nav-item span {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.mobile-nav-item.active {
+  color: var(--primary-color, #2e8b57); /* Use your site's primary color */
+}
+
+/* Add padding to body when mobile nav is active */
+body.has-mobile-nav {
+  padding-bottom: 65px;
+}
+
+/* Menu Modal */
+.menu-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.menu-modal.active {
+  display: flex;
+}
+
+.menu-modal-content {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 20px;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+.menu-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #777;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-modal-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.menu-modal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 15px 10px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.menu-modal-item i {
+  font-size: 24px;
+  color: var(--primary-color, #2e8b57); /* Use your site's primary color */
+  margin-bottom: 8px;
+}
+
+.menu-modal-item span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.menu-modal-item:hover,
+.menu-modal-item:active {
+  background-color: #e9ecef;
+  transform: translateY(-3px);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Show mobile nav only on small screens */
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: block;
+  }
+
+  body {
+    padding-bottom: 65px;
+  }
+
+  /* Hide the regular menu toggle button when mobile nav is active */
+  header .menu-toggle {
+    display: none;
+  }
+
+  /* Hide desktop menu */
+  .nav-menu .menu {
+    display: none;
+  }
+}

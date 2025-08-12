@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="assets/img/logo-desa.png" type="image/png">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/statistik.css">
+    <link rel="stylesheet" href="assets/style/mobile-view.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="assets/style/maps.css">
@@ -1113,6 +1114,59 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-container">
+            <a href="#beranda" class="mobile-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="#profil" class="mobile-nav-item">
+                <i class="fas fa-info-circle"></i>
+                <span>Profil</span>
+            </a>
+            <a href="#potensi" class="mobile-nav-item">
+                <i class="fas fa-seedling"></i>
+                <span>Potensi</span>
+            </a>
+            <a href="#wisata" class="mobile-nav-item">
+                <i class="fas fa-mountain"></i>
+                <span>Wisata</span>
+            </a>
+            <a href="#" class="mobile-nav-item menu-toggle-bottom">
+                <i class="fas fa-bars"></i>
+                <span>Menu</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Modal -->
+    <div class="menu-modal" id="menuModal">
+        <div class="menu-modal-content">
+            <button class="menu-modal-close" id="menuModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="menu-modal-list">
+                <a href="#statistik" class="menu-modal-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Statistik</span>
+                </a>
+                <a href="#peta" class="menu-modal-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Peta</span>
+                </a>
+                <a href="#galeri" class="menu-modal-item">
+                    <i class="fas fa-images"></i>
+                    <span>Galeri</span>
+                </a>
+                <a href="#kontak" class="menu-modal-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Kontak</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>

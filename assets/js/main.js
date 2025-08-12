@@ -606,3 +606,66 @@ document.addEventListener("DOMContentLoaded", function () {
     animateChartsOnScroll();
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Mobile menu modal toggle
+  const menuToggleBottom = document.querySelector(".menu-toggle-bottom");
+  const menuModal = document.getElementById("menuModal");
+  const menuModalClose = document.getElementById("menuModalClose");
+
+  if (menuToggleBottom && menuModal) {
+    menuToggleBottom.addEventListener("click", function (e) {
+      e.preventDefault();
+      menuModal.classList.add("active");
+      document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+    });
+
+    menuModalClose.addEventListener("click", function () {
+      menuModal.classList.remove("active");
+      document.body.style.overflow = ""; // Re-enable scrolling
+    });
+
+    // Close modal when clicking outside of content
+    menuModal.addEventListener("click", function (e) {
+      if (e.target === menuModal) {
+        menuModal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+
+    // Handle menu modal item clicks
+    document.querySelectorAll(".menu-modal-item").forEach((item) => {
+      item.addEventListener("click", function () {
+        menuModal.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    });
+  }
+
+  // Update active state for mobile nav based on scroll position
+  function updateActiveState() {
+    const scrollPosition = window.scrollY;
+    const sections = document.querySelectorAll("section[id]");
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+
+      if (
+        scrollPosition >= sectionTop &&
+        scrollPosition < sectionTop + sectionHeight
+      ) {
+        document.querySelectorAll(".mobile-nav-item").forEach((item) => {
+          item.classList.remove("active");
+          if (item.getAttribute("href") === `#${sectionId}`) {
+            item.classList.add("active");
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveState);
+  updateActiveState(); // Initial call
+});

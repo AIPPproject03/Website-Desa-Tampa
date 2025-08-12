@@ -7,6 +7,7 @@
     <title>Potensi UMKM - Desa Tampa</title>
     <link rel="stylesheet" href="../../assets/style/main.css">
     <link rel="stylesheet" href="../../assets/style/potensi.css">
+    <link rel="stylesheet" href="../../assets/style/mobile-view.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -240,6 +241,59 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-container">
+            <a href="../../index.html#beranda" class="mobile-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="../../index.html#profil" class="mobile-nav-item">
+                <i class="fas fa-info-circle"></i>
+                <span>Profil</span>
+            </a>
+            <a href="../../index.html#potensi" class="mobile-nav-item">
+                <i class="fas fa-seedling"></i>
+                <span>Potensi</span>
+            </a>
+            <a href="../../index.html#wisata" class="mobile-nav-item">
+                <i class="fas fa-mountain"></i>
+                <span>Wisata</span>
+            </a>
+            <a href="#" class="mobile-nav-item menu-toggle-bottom">
+                <i class="fas fa-bars"></i>
+                <span>Menu</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Modal -->
+    <div class="menu-modal" id="menuModal">
+        <div class="menu-modal-content">
+            <button class="menu-modal-close" id="menuModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="menu-modal-list">
+                <a href="../../index.html#statistik" class="menu-modal-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Statistik</span>
+                </a>
+                <a href="../../index.html#peta" class="menu-modal-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Peta</span>
+                </a>
+                <a href="../../index.html#galeri" class="menu-modal-item">
+                    <i class="fas fa-images"></i>
+                    <span>Galeri</span>
+                </a>
+                <a href="../../index.html#kontak" class="menu-modal-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Kontak</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script src="../../assets/js/main.js"></script>
 </body>
