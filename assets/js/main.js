@@ -605,6 +605,318 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial check
     animateChartsOnScroll();
   });
+
+  // Enhanced mobile navigation with smooth animations
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select mobile navigation elements
+    const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
+    const menuToggleBottom = document.querySelector(".menu-toggle-bottom");
+    const menuModal = document.getElementById("menuModal");
+    const menuModalClose = document.getElementById("menuModalClose");
+    const menuModalItems = document.querySelectorAll(".menu-modal-item");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    // Track scroll position for smart navigation
+    let lastScrollTop = 0;
+    let scrollTimer = null;
+
+    // Add ripple effect to mobile nav items
+    function createRipple(event) {
+      const button = event.currentTarget;
+
+      // Remove any existing ripples
+      const existingRipple = button.querySelector(".ripple");
+      if (existingRipple) {
+        existingRipple.remove();
+      }
+
+      // Create ripple element
+      const ripple = document.createElement("span");
+      ripple.classList.add("ripple");
+
+      // Set ripple position
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+
+      ripple.style.width = ripple.style.height = `${diameter}px`;
+      ripple.style.left = `${event.offsetX - radius}px`;
+      ripple.style.top = `${event.offsetY - radius}px`;
+
+      // Add ripple to button
+      button.appendChild(ripple);
+
+      // Remove ripple after animation
+      setTimeout(() => {
+        if (ripple && ripple.parentNode === button) {
+          button.removeChild(ripple);
+        }
+      }, 600);
+    }
+
+    // Add ripple effect to all mobile nav items
+    mobileNavItems.forEach((item) => {
+      item.addEventListener("click", createRipple);
+    });
+
+    // Handle mobile nav item clicks with smooth transitions
+    mobileNavItems.forEach((item) => {
+      if (!item.classList.contains("menu-toggle-bottom")) {
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Remove active class from all items and add to clicked item
+          mobileNavItems.forEach((navItem) => {
+            navItem.classList.remove("active");
+          });
+          this.classList.add("active");
+
+          // Add tactile feedback with subtle animation
+          this.querySelector("i").classList.add("pulse");
+          setTimeout(() => {
+            this.querySelector("i").classList.remove("pulse");
+          }, 400);
+
+          // Get target section and scroll to it
+          const targetId = this.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            // Add smooth scrolling with optimal speed based on distance
+            const distance = Math.abs(
+              targetSection.getBoundingClientRect().top
+            );
+            const scrollDuration = Math.min(Math.max(300, distance / 2), 800);
+
+            smoothScrollTo(targetSection, scrollDuration);
+          }
+        });
+      }
+    });
+
+    // Enhanced smooth scrolling function
+    function smoothScrollTo(targetElement, duration) {
+      const targetPosition =
+        targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const startPosition = window.pageYOffset;
+      const headerHeight = document.querySelector(".header").offsetHeight;
+      const distance = targetPosition - headerHeight - startPosition;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const scrollY = easeInOutQuad(
+          timeElapsed,
+          startPosition,
+          distance,
+          duration
+        );
+        window.scrollTo(0, scrollY);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      // Easing function for smoother animation
+      function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    // Enhanced menu modal interactions
+    if (menuToggleBottom && menuModal) {
+      // Open modal with animation
+      menuToggleBottom.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Add ripple effect
+        createRipple(e);
+
+        // Open modal with animation
+        menuModal.style.display = "flex";
+        menuModal.offsetHeight; // Force reflow
+        menuModal.classList.add("active");
+        document.body.classList.add("no-scroll");
+
+        // Add entrance animation to modal content
+        const modalContent = menuModal.querySelector(".menu-modal-content");
+        modalContent.style.transform = "translateY(0)";
+      });
+
+      // Close modal with animation
+      menuModalClose.addEventListener("click", closeMenuModal);
+
+      // Close modal when clicking outside
+      menuModal.addEventListener("click", function (e) {
+        if (e.target === menuModal) {
+          closeMenuModal();
+        }
+      });
+
+      // Function to close modal with animation
+      function closeMenuModal() {
+        const modalContent = menuModal.querySelector(".menu-modal-content");
+        modalContent.style.transform = "translateY(100%)";
+
+        setTimeout(() => {
+          menuModal.classList.remove("active");
+          document.body.classList.remove("no-scroll");
+
+          // After animation completes, hide the modal
+          setTimeout(() => {
+            menuModal.style.display = "none";
+          }, 100);
+        }, 250);
+      }
+
+      // Handle menu modal item clicks
+      menuModalItems.forEach((item) => {
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Get target section
+          const targetId = this.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          // Close modal first
+          closeMenuModal();
+
+          // Then scroll to target after modal closing animation
+          setTimeout(() => {
+            if (targetSection) {
+              smoothScrollTo(targetSection, 500);
+
+              // Update active nav item
+              mobileNavItems.forEach((navItem) => {
+                navItem.classList.remove("active");
+                if (navItem.getAttribute("href") === targetId) {
+                  navItem.classList.add("active");
+                }
+              });
+            }
+          }, 350);
+        });
+      });
+    }
+
+    // Show/hide navigation bar on scroll
+    window.addEventListener("scroll", function () {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      // Always show navbar at the top of the page
+      if (scrollTop <= 100) {
+        mobileNav.classList.remove("hide");
+        return;
+      }
+
+      // Hide when scrolling down, show when scrolling up
+      if (scrollTop > lastScrollTop + 10) {
+        mobileNav.classList.add("hide");
+      } else if (scrollTop < lastScrollTop - 10) {
+        mobileNav.classList.remove("hide");
+      }
+
+      lastScrollTop = scrollTop;
+
+      // Always show the navigation after scrolling stops
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        mobileNav.classList.remove("hide");
+      }, 1500);
+    });
+
+    // Update active state based on scroll position with enhanced animation
+    function updateActiveNavWithAnimation() {
+      const scrollPosition = window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      const sections = document.querySelectorAll("section[id]");
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id");
+
+        // Check if section is in viewport and takes up significant portion
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          // Only update if not already active
+          const currentActive = document.querySelector(
+            ".mobile-nav-item.active"
+          );
+          const targetItem = document.querySelector(
+            `.mobile-nav-item[href="#${sectionId}"]`
+          );
+
+          if (targetItem && currentActive !== targetItem) {
+            // Remove active class from all items
+            mobileNavItems.forEach((navItem) => {
+              navItem.classList.remove("active");
+            });
+
+            // Add active class to current section nav item
+            targetItem.classList.add("active");
+
+            // Add subtle animation to icon
+            const icon = targetItem.querySelector("i");
+            icon.style.animation = "none"; // Reset animation
+            void icon.offsetWidth; // Trigger reflow
+            icon.style.animation = "pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)";
+          }
+        }
+      });
+    }
+
+    // Add animation for pop effect
+    const style = document.createElement("style");
+    style.innerHTML = `
+    @keyframes pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    .ripple {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+    
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  `;
+    document.head.appendChild(style);
+
+    // Update active state on scroll with throttling for performance
+    let isScrolling = false;
+    window.addEventListener("scroll", function () {
+      if (!isScrolling) {
+        window.requestAnimationFrame(function () {
+          updateActiveNavWithAnimation();
+          isScrolling = false;
+        });
+        isScrolling = true;
+      }
+    });
+
+    // Initial call to set active state
+    updateActiveNavWithAnimation();
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
