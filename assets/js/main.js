@@ -981,3 +981,218 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", updateActiveState);
   updateActiveState(); // Initial call
 });
+
+// Enhanced Statistics Animations
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+      rect.bottom >= 0
+    );
+  }
+
+  // Number counter animation
+  function animateCountUp(el, target) {
+    const duration = 2000;
+    const frameDuration = 1000 / 60;
+    const totalFrames = Math.round(duration / frameDuration);
+    let frame = 0;
+
+    // Handle thousands separator
+    const hasComma = target.toString().includes(",");
+    const targetNum = parseFloat(target.toString().replace(/,/g, ""));
+
+    const counter = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const currentCount = Math.round(targetNum * progress);
+
+      if (hasComma) {
+        el.textContent = currentCount.toLocaleString("id-ID");
+      } else {
+        el.textContent = currentCount;
+      }
+
+      if (frame === totalFrames) {
+        clearInterval(counter);
+      }
+    }, frameDuration);
+  }
+
+  // Initialize animations for stats section
+  function initStatsAnimations() {
+    // Get all number elements to animate
+    const bigNumbers = document.querySelectorAll(
+      ".big-number, .gender-count, .household-count, .stat-value"
+    );
+    const chartBars = document.querySelectorAll(".chart-bar");
+    const pieCharts = document.querySelectorAll(".pie-chart, .donut-chart");
+    const progressBars = document.querySelectorAll(".progress-fill");
+    const statItems = document.querySelectorAll(
+      ".sector-item, .infra-item, .tech-item, .product-stat"
+    );
+
+    // Store original chart bar heights
+    chartBars.forEach((bar) => {
+      // Get original height from style
+      const originalHeight = bar.style.height;
+      // Store it as custom property
+      bar.style.setProperty("--target-height", originalHeight);
+      // Reset height to 0
+      bar.style.height = "0";
+    });
+
+    // Store original progress bar widths
+    progressBars.forEach((bar) => {
+      // Get original width from style
+      const originalWidth = bar.style.width;
+      // Store it as custom property
+      bar.style.setProperty("--target-width", originalWidth);
+      // Reset width to 0
+      bar.style.width = "0";
+    });
+
+    // Function to check and animate elements
+    function checkAndAnimateElements() {
+      // Stats numbers
+      bigNumbers.forEach((number) => {
+        if (isInViewport(number) && !number.classList.contains("animated")) {
+          number.classList.add("animated", "visible");
+          number.classList.add("pulse");
+
+          setTimeout(() => {
+            number.classList.remove("pulse");
+          }, 3000);
+
+          const target = number.textContent;
+          animateCountUp(number, target);
+        }
+      });
+
+      // Chart bars
+      chartBars.forEach((bar) => {
+        if (isInViewport(bar) && !bar.classList.contains("animated")) {
+          setTimeout(() => {
+            bar.classList.add("animated");
+          }, 200);
+        }
+      });
+
+      // Pie and donut charts
+      pieCharts.forEach((chart) => {
+        if (isInViewport(chart) && !chart.classList.contains("animated")) {
+          setTimeout(() => {
+            chart.classList.add("animated");
+          }, 300);
+        }
+      });
+
+      // Progress bars
+      progressBars.forEach((bar) => {
+        if (isInViewport(bar) && !bar.classList.contains("animated")) {
+          setTimeout(() => {
+            bar.classList.add("animated");
+          }, 400);
+        }
+      });
+
+      // Stats items (fade in sequence)
+      statItems.forEach((item, index) => {
+        if (isInViewport(item) && !item.classList.contains("visible")) {
+          setTimeout(() => {
+            item.classList.add("visible");
+          }, 100 * index);
+        }
+      });
+    }
+
+    // Initial check for animations
+    checkAndAnimateElements();
+
+    // Add scroll event listener
+    window.addEventListener("scroll", checkAndAnimateElements);
+
+    // Interactive card hover effects for statistics cards
+    const statsCards = document.querySelectorAll(".stats-card");
+
+    statsCards.forEach((card) => {
+      card.addEventListener("mouseenter", function () {
+        // Pulse the main stat number when card is hovered
+        const mainStat = this.querySelector(".big-number, .stat-value");
+        if (mainStat) {
+          mainStat.classList.add("pulse");
+        }
+      });
+
+      card.addEventListener("mouseleave", function () {
+        // Remove pulse effect when mouse leaves
+        const mainStat = this.querySelector(".big-number, .stat-value");
+        if (mainStat) {
+          mainStat.classList.remove("pulse");
+        }
+      });
+    });
+  }
+
+  // Initialize animations when stats section is in view
+  const statsSection = document.getElementById("statistik");
+  if (statsSection) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          initStatsAnimations();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(statsSection);
+  }
+
+  // Allow users to "play" animations again by clicking section title
+  const statsTitle = document.querySelector("#statistik .section-title");
+  if (statsTitle) {
+    statsTitle.addEventListener("click", function () {
+      // Reset and replay animations
+      const chartBars = document.querySelectorAll(".chart-bar");
+      const pieCharts = document.querySelectorAll(".pie-chart, .donut-chart");
+      const progressBars = document.querySelectorAll(".progress-fill");
+
+      // Reset chart bars
+      chartBars.forEach((bar) => {
+        bar.classList.remove("animated");
+        bar.style.height = "0";
+        setTimeout(() => {
+          bar.classList.add("animated");
+        }, 100);
+      });
+
+      // Reset pie charts
+      pieCharts.forEach((chart) => {
+        chart.classList.remove("animated");
+        setTimeout(() => {
+          chart.classList.add("animated");
+        }, 100);
+      });
+
+      // Reset progress bars
+      progressBars.forEach((bar) => {
+        bar.classList.remove("animated");
+        bar.style.width = "0";
+        setTimeout(() => {
+          bar.classList.add("animated");
+        }, 100);
+      });
+
+      // Add subtle feedback that clicking worked
+      this.style.color = "#3498db";
+      setTimeout(() => {
+        this.style.color = "";
+      }, 500);
+    });
+  }
+});
