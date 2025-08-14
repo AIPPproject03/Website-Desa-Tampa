@@ -1196,3 +1196,130 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Gallery Lightbox Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryItems = document.querySelectorAll(".gallery-item");
+  const lightbox = document.getElementById("galleryLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const lightboxPrev = document.getElementById("lightboxPrev");
+  const lightboxNext = document.getElementById("lightboxNext");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+
+  let currentImageIndex = 0;
+  const galleryImages = [];
+
+  // Collect all gallery images and their alts
+  galleryItems.forEach((item, index) => {
+    const img = item.querySelector("img");
+    galleryImages.push({
+      src: img.src,
+      alt: img.alt,
+    });
+
+    // Add click event to each gallery item
+    item.addEventListener("click", () => {
+      openLightbox(index);
+    });
+  });
+
+  // Function to open lightbox
+  function openLightbox(index) {
+    currentImageIndex = index;
+    updateLightboxImage();
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden"; // Prevent scrolling when lightbox is open
+  }
+
+  // Function to close lightbox
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = ""; // Re-enable scrolling
+  }
+
+  // Function to update lightbox image
+  function updateLightboxImage() {
+    // Add a small loading delay to make transition smoother
+    lightboxImage.style.opacity = "0.3";
+    setTimeout(() => {
+      lightboxImage.src = galleryImages[currentImageIndex].src;
+      lightboxCaption.textContent = galleryImages[currentImageIndex].alt;
+      lightboxImage.style.opacity = "1";
+    }, 200);
+  }
+
+  // Next image
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    updateLightboxImage();
+  }
+
+  // Previous image
+  function prevImage() {
+    currentImageIndex =
+      (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateLightboxImage();
+  }
+
+  // Event listeners
+  lightboxClose.addEventListener("click", closeLightbox);
+  lightboxNext.addEventListener("click", nextImage);
+  lightboxPrev.addEventListener("click", prevImage);
+
+  // Close lightbox when clicking outside the image
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("active")) return;
+
+    if (e.key === "Escape") {
+      closeLightbox();
+    } else if (e.key === "ArrowRight") {
+      nextImage();
+    } else if (e.key === "ArrowLeft") {
+      prevImage();
+    }
+  });
+
+  // Add swipe support for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    },
+    false
+  );
+
+  lightbox.addEventListener(
+    "touchend",
+    (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    },
+    false
+  );
+
+  function handleSwipe() {
+    // Minimum swipe distance threshold (in pixels)
+    const minSwipeDistance = 50;
+
+    if (touchEndX < touchStartX - minSwipeDistance) {
+      // Swipe left, go to next image
+      nextImage();
+    }
+
+    if (touchEndX > touchStartX + minSwipeDistance) {
+      // Swipe right, go to previous image
+      prevImage();
+    }
+  }
+});
